@@ -85,7 +85,7 @@ func GenerateSendRawTxCall(layer string, nonce, value *big.Int) string {
 	case "L3":
 		rpcurl = "http://localhost:8449"
 	}
-	rlps, txhs, err := CreateRawTxRLP("c522c068090d4e888dadbab9967fd81a79a451aff84dce2040df59ad5a6ce1e8", nonce.Uint64(), "0x1c0e8FC9DEcC4Ae5C4947156aC87D5538bC124fb", value, 210000, big.NewInt(100000000))
+	rlps, txhs, err := CreateRawTxRLP("c522c068090d4e888dadbab9967fd81a79a451aff84dce2040df59ad5a6ce1e8", nonce.Uint64(), "0x5F18bD40CF6cBbf034ff3d2003576B95E73D32e3", value, 210000, big.NewInt(100000000))
 	if err != nil {
 		return err.Error()
 	}
@@ -95,7 +95,6 @@ func GenerateSendRawTxCall(layer string, nonce, value *big.Int) string {
 }
 
 func RLPEncodeTransaction(txjson string) (string, error) {
-
 	tx := new(types.Transaction)
 	err := tx.UnmarshalJSON([]byte(txjson))
 	if err != nil {

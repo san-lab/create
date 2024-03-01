@@ -16,7 +16,7 @@ func TestRawTx(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	nonce := uint64(3)
+	nonce := uint64(1)
 	//fromAddress := crypto.PubkeyToAddress(privateKey.PublicKey)
 	toAddress := common.HexToAddress("0x1c0e8FC9DEcC4Ae5C4947156aC87D5538bC124fb")
 
@@ -40,7 +40,7 @@ func TestRawTx(t *testing.T) {
 		t.Fatal(err)
 	}
 	fmt.Printf("Raw tx: %x\n", traw)
-	pre := "curl " + rpcUrl + `  -X POST   -H "Content-Type: application/json"   --data '{"jsonrpc":"2.0", "method":"eth_sendRawTransaction","params":["`
+	pre := "curl " + rpcUrl + `  -X POST   -H "Content-Type: application/json"   --data '{"jsonrpc":"2.0", "method":"eth_sendRawTransaction","params":["0x`
 	post := `"],"id":1}'`
 	fmt.Printf("%s%x%s\n", pre, traw, post)
 }
