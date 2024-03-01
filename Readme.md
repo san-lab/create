@@ -20,4 +20,4 @@ Replaying Legacy Transaction
 
 5. Replay the transaction (send to L2)
 
-   ``sendSingedTransactionL2.sh $RLP` --> Hash
+   `sendSingedTransactionL2.sh $RLP` --> Hash
