@@ -14,7 +14,7 @@ import (
 // Usage: main <cmd> (<layer> <nonce> <value> || <txdata>)
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: clt (<layer> <nonce> <value> || <txdata>)")
+		fmt.Println("Usage: clt (createTx || rlpEncode) (<layer> <nonce> <value> || <txdata>)")
 		return
 	}
 	switch os.Args[1] {
@@ -42,6 +42,8 @@ func main() {
 			fmt.Println(err)
 			return
 		}
+		fmt.Println()
+		fmt.Println("Rlp encoded transaction:")
 		fmt.Println(`\"` + rlp + `\"`)
 	default:
 		fmt.Println("Unknown command")
